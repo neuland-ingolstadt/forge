@@ -68,11 +68,13 @@ outputs.forEach(info => {
       forge: info.entry
     },
     // disable various node shims as forge handles this manually
-    node: {
-      Buffer: false,
-      process: false,
-      crypto: false,
-      setImmediate: false
+    resolve: {
+      fallback: {
+        Buffer: false,
+        process: false,
+        crypto: false,
+        setImmediate: false
+      }
     }
   };
 
